@@ -1,0 +1,12 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>src/buttons/ButtonDefault.qml</file>
+        <file>src/js/helper.js</file>
+        <file>src/styles/TouchStyle.qml</file>
+        <file>src/variables/base.js</file>
+        <file>src/variables/buttons.js</file>
+        <file>src/variables/colors.js</file>
+        <file>src/variables/fontawesome.js</file>
+    </qresource>
+</RCC>
