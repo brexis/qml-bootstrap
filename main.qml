@@ -6,10 +6,10 @@ Window {
     visible: true
     width: 640
     height: 480
-    title: qsTr("Hello World")
+    title: qsTr("Hello World !")
 
     Text {
-        text: qsTr("Hello World")
+        text: qsTr("Hello World !")
         anchors.centerIn: parent
     }
     Buttons.ButtonDefault{
