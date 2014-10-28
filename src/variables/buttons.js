@@ -21,6 +21,13 @@ var sizes = [{
         icon_size: 32,
     },
     {
+        className: "medium",
+        font_size: 16,
+        height: 42,
+        padding: 12,
+        icon_size: 24,
+    },
+    {
         className: "small",
         font_size: 12,
         height: 28,
@@ -118,18 +125,49 @@ var styles = [{
     }
 ]
 
-function getSize (className) {
+function getSize (size) {
     for (var i = 0; i < sizes.length; i++) {
-        if (sizes[i].className === className) {
+        if (sizes[i].className === size) {
             return sizes[i];
         }
     }
+    return null;
 }
 
-function getStyle (className) {
+function getStyle (style) {
     for (var i = 0; i < styles.length; i++) {
-        if (styles[i].className === className) {
+        if (styles[i].className === style) {
             return styles[i];
         }
     }
+    return null;
+}
+
+function parseClassName (className) {
+    var type = {
+        style: null,
+        size: null
+    };
+
+    var classes = className.split(' ');
+
+    for (var i = 0; i < classes.length; i++) {
+        if (getSize(classes[i]) !== null) {
+            type.size = getSize(classes[i]);
+            continue;
+        } else if (getStyle(classes[i]) !== null) {
+            type.style = getStyle(classes[i]);
+        }
+    }
+
+    if (type.size === null) {
+        type.size = getSize('medium');
+    }
+
+    if (type.style === null) {
+        type.style = getStyle('default');
+    }
+
+    console.log(JSON.stringify(type));
+    return type;
 }

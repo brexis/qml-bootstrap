@@ -13,47 +13,47 @@ Window {
         anchors.centerIn: parent
         spacing: 10
         ButtonDefault {
-            design: "light"
+            className: "light"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "stable"
+            className: "stable"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "positive"
+            className: "positive"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "calm"
+            className: "calm"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "balanced"
+            className: "balanced"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "energized"
+            className: "energized"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "assertive"
+            className: "assertive"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "royal"
+            className: "royal"
             width: 100
             height: 50
         }
         ButtonDefault {
-            design: "dark"
+            className: "dark"
             width: 100
             height: 50
         }
