@@ -7,11 +7,12 @@ import "../variables/buttons.js" as Vars
 
 Button {
     text: "Button"
-    property string className: "";
-    property var styleBtn: Vars.parseClassName(className);
+    property string class_name: "";
+    property var style_btn: Vars.parseClassName(class_name);
 
-    implicitWidth: (Vars.button.padding * 3) + Vars.button.font_size
-    implicitHeight: Vars.button.height + 5
+    width: implicitWidth + style_btn.size.padding
+    height: style_btn.size.height + 5
+
     style: ButtonStyle {
         background: Item {
             width: control.width
@@ -19,8 +20,8 @@ Button {
             Rectangle {
                 id: rect
                 anchors.fill: parent
-                color: control.pressed ? styleBtn.style.active_bg :styleBtn.style.bg
-                border.color: control.pressed ? styleBtn.style.active_border : styleBtn.style.border
+                color: control.pressed ? style_btn.style.active_bg :style_btn.style.bg
+                border.color: control.pressed ? style_btn.style.active_border : style_btn.style.border
                 border.width: Vars.button.border_width
                 radius: Vars.button.border_radius
                 Rectangle {
@@ -34,14 +35,11 @@ Button {
             }
         }
         label: Text {
-            width: control.width
-            height: control.height
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
-            text: control.text
-            font.pixelSize: 0
-            //lineHeight: Vars.button.height - Vars.button.border_width + 1
-            color: styleBtn.style.text
+            text: control.text                        
+            font.pixelSize: style_btn.size.font_size
+            color: style_btn.style.text
         }
     }
 }

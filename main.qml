@@ -13,49 +13,32 @@ Window {
         anchors.centerIn: parent
         spacing: 10
         ButtonDefault {
-            className: "light"
-            width: 100
-            height: 50
+            class_name: "calm small"
+            text: "Un très joli bouton"
         }
         ButtonDefault {
-            className: "stable"
-            width: 100
-            height: 50
+            class_name: "stable large"
         }
         ButtonDefault {
-            className: "positive"
-            width: 100
-            height: 50
+            class_name: "positive"
         }
         ButtonDefault {
-            className: "calm"
-            width: 100
-            height: 50
+            class_name: "calm"
         }
         ButtonDefault {
-            className: "balanced"
-            width: 100
-            height: 50
+            class_name: "balanced"
         }
         ButtonDefault {
-            className: "energized"
-            width: 100
-            height: 50
+            class_name: "energized"
         }
         ButtonDefault {
-            className: "assertive"
-            width: 100
-            height: 50
+            class_name: "assertive"
         }
         ButtonDefault {
-            className: "royal"
-            width: 100
-            height: 50
+            class_name: "royal"
         }
         ButtonDefault {
-            className: "dark"
-            width: 100
-            height: 50
+            class_name: "dark"
         }
     }
 

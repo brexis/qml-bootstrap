@@ -5,12 +5,7 @@ var button = {
     block_margin: 10,
     clear_padding: 6,
     border_radius: 2,
-    border_width: 1,
-
-    font_size: 16,
-    height: 42,
-    padding: 12,
-    icon_size: 24,
+    border_width: 1
 }
 
 var sizes = [{
@@ -168,6 +163,5 @@ function parseClassName (className) {
         type.style = getStyle('default');
     }
 
-    console.log(JSON.stringify(type));
     return type;
 }
