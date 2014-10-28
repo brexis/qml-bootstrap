@@ -13,7 +13,7 @@ Window {
         anchors.centerIn: parent
         spacing: 10
         ButtonDefault {
-            class_name: "calm small"
+            class_name: "large calm"
             text: "Un très joli bouton"
         }
         ButtonDefault {

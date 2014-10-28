@@ -13,6 +13,9 @@ OTHER_FILES += \
 		src/variables/fontawesome.js \
 		src/styles/TouchStyle.qml \
 		src/buttons/ButtonDefault.qml \
+    src/lists/List.qml \
+    src/variables/items.js \
+    src/styles/TouchOutlineStyle.qml
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

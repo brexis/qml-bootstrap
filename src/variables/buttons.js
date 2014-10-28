@@ -1,167 +1,121 @@
 Qt.include("colors.js");
 
-var button = {
-    color: '#222',
-    block_margin: 10,
-    clear_padding: 6,
-    border_radius: 2,
-    border_width: 1
+function parseClassName (className) {
+    var type = {
+        style: buttonStyles.default,
+        size: buttonSizes.default
+    };
+    var classes = className.split(' ');
+
+    for (var i = 0; i < classes.length; ++i) {
+        var trimClass = classes[i].trim();
+        var size = buttonSizes[trimClass];
+        var style =  buttonStyles[trimClass];
+        if (size) {
+            type.size = size;
+        }
+        if (style) {
+            type.style = style;
+        }
+    }
+    return type;
 }
 
-var sizes = [{
-        className: "large",
-        font_size: 20,
-        height: 54,
-        padding: 16,
-        icon_size: 32,
-    },
-    {
-        className: "medium",
-        font_size: 16,
-        height: 42,
-        padding: 12,
-        icon_size: 24,
-    },
-    {
-        className: "small",
-        font_size: 12,
-        height: 28,
-        padding: 4,
-        icon_size: 16,
-    },
-    {
-        className: "bar",
-        font_size: 13,
-        height: 32,
-        padding: 8,
-        icon_size: 20,
-    }
-];
+var button_color = "#222";
+var block_margin = 10;
+var clear_padding = 6;
+var border_radius = 2;
+var border_width = 1;
 
-var styles = [{
-    className: "light",
-    bg: color.light,
-    text: '#444',
-    border: '#ddd',
-    active_bg: '#fafafa',
-    active_border: '#ccc',
+var buttonSizes = {
+    "default": {
+        font_size: 16,
+        height:    42,
+        padding:   12,
+        icon_size: 24
     },
-    {
-        className: "stable",
+    large: {
+        font_size: 20,
+        height:    54,
+        padding:   16,
+        icon_size: 32
+    },
+    small: {
+        font_size: 12,
+        height:    28,
+        padding:   4,
+        icon_size: 16
+    },
+    bar: {
+        font_size: 13,
+        height:    32,
+        padding:   8,
+        icon_size: 20
+    }
+};
+
+var buttonStyles = {
+    light: {
+        bg: color.light,
+        text: "#444",
+        border: "#ddd",
+        active_bg: "#fafafa",
+        active_border: "#ccc"
+    },
+    stable: {
         bg: color.stable,
-        text: '#444',
-        border: '#b2b2b2',
-        active_bg: '#e5e5e5',
-        active_border: '#a2a2a2'
+        text: "#444",
+        border: "#b2b2b2",
+        active_bg: "#e5e5e5",
+        active_border: "#a2a2a2"
     },
-    {
-        className: "positive",
+    positive: {
         bg: color.positive,
-        text: '#fff',
+        text: "#fff",
         border: Qt.darker(color.positive, 1.18),
         active_bg: Qt.darker(color.positive, 1.18),
         active_border: Qt.darker(color.positive, 1.18)
     },
-    {
-        className: "calm",
+    calm: {
         bg: color.calm,
-        text: '#fff',
+        text: "#fff",
         border: Qt.darker(color.calm, 1.18),
         active_bg: Qt.darker(color.calm, 1.18),
         active_border: Qt.darker(color.calm, 1.18)
     },
-    {
-        className: "assertive",
+    assertive: {
         bg: color.assertive,
-        text: '#fff',
+        text: "#fff",
         border: Qt.darker(color.assertive, 1.18),
         active_bg: Qt.darker(color.assertive, 1.18),
         active_border: Qt.darker(color.assertive, 1.18)
     },
-    {
-        className: "balanced",
+    balanced: {
         bg: color.balanced,
-        text: '#fff',
+        text: "#fff",
         border: Qt.darker(color.balanced, 1.18),
         active_bg: Qt.darker(color.balanced, 1.18),
-        active_border:  Qt.darker(color.balanced, 1.18)
+        active_border: Qt.darker(color.balanced, 1.18)
     },
-    {
-        className: "energized",
+    royal: {
         bg: color.energized,
-        text: '#fff',
+        text: "#fff",
         border: Qt.darker(color.energized, 1.18),
         active_bg: Qt.darker(color.energized, 1.18),
         active_border: Qt.darker(color.energized, 1.18)
     },
-    {
-        className: "royal",
-        bg: color.royal,
-        text: '#fff',
-        border: Qt.darker(color.royal, 1.18),
-        active_bg: Qt.darker(color.royal, 1.18),
-        active_border: Qt.darker(color.royal, 1.18)
-    },
-    {
-        className: "dark",
+    dark: {
         bg: color.dark,
-        text: '#fff',
-        border: '#111',
-        active_bg: '#262626',
-        active_border: '#000'
+        text: "#fff",
+        border: Qt.darker(color.dark, 1.18),
+        active_bg: Qt.darker(color.dark, 1.18),
+        active_border: Qt.darker(color.dark, 1.18)
     },
-    {
-        className: "default",
+    "default": {
         bg: color.stable,
-        text: '#444',
-        border: '#b2b2b2',
-        active_bg: '#e5e5e5',
-        active_border: '#a2a2a2'
+        text: "#444",
+        border: "#b2b2b2",
+        active_bg: "#e5e5e5",
+        active_border: "#a2a2a2"
     }
-]
-
-function getSize (size) {
-    for (var i = 0; i < sizes.length; i++) {
-        if (sizes[i].className === size) {
-            return sizes[i];
-        }
-    }
-    return null;
-}
-
-function getStyle (style) {
-    for (var i = 0; i < styles.length; i++) {
-        if (styles[i].className === style) {
-            return styles[i];
-        }
-    }
-    return null;
-}
-
-function parseClassName (className) {
-    var type = {
-        style: null,
-        size: null
-    };
-
-    var classes = className.split(' ');
-
-    for (var i = 0; i < classes.length; i++) {
-        if (getSize(classes[i]) !== null) {
-            type.size = getSize(classes[i]);
-            continue;
-        } else if (getStyle(classes[i]) !== null) {
-            type.style = getStyle(classes[i]);
-        }
-    }
-
-    if (type.size === null) {
-        type.size = getSize('medium');
-    }
-
-    if (type.style === null) {
-        type.style = getStyle('default');
-    }
-
-    return type;
-}
+};
