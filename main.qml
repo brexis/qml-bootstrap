@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
 import QtQuick.Window 2.0
-import "src/buttons" as Qb
+import "src/buttons"
 
 Window {
     visible: true
@@ -12,47 +12,47 @@ Window {
     Column {
         anchors.centerIn: parent
         spacing: 10
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "light"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "stable"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "positive"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "calm"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "balanced"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "energized"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "assertive"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "royal"
             width: 100
             height: 50
         }
-        Qb.ButtonDefault {
+        ButtonDefault {
             design: "dark"
             width: 100
             height: 50
