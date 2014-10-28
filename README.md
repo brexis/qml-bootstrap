@@ -74,6 +74,9 @@ You can use these components Window, Linux, Max OS Android or IOS.
 
 #Thanks
 [Ionic Framework](http://ionicframework.com/) - A hybrid mobile apps framework.
+
 [Font Awesome](http://fortawesome.github.io/Font-Awesome/) - The iconic font and CSS toolkit.
+
 [Qt Project](http://qt-project.org/) - True cross-platform framework.
+
 "[Using Fonts Awesome in QML](http://kdeblog.mageprojects.com/2012/11/20/using-fonts-awesome-in-qml/)" by markg85.
