@@ -8,37 +8,37 @@ Window {
     width: 640
     height: 640
     title: qsTr("Hello World !")
+    color: 'black'
 
     Column {
         anchors.centerIn: parent
         spacing: 10
         ButtonDefault {
-            class_name: "large calm"
-            text: "Un très joli bouton"
+            class_name: "light outline"
         }
         ButtonDefault {
-            class_name: "stable large"
+            class_name: "stable outline"
         }
         ButtonDefault {
-            class_name: "positive"
+            class_name: "positive outline"
         }
         ButtonDefault {
-            class_name: "calm"
+            class_name: "calm outline"
         }
         ButtonDefault {
-            class_name: "balanced"
+            class_name: "balanced outline"
         }
         ButtonDefault {
-            class_name: "energized"
+            class_name: "energized outline"
         }
         ButtonDefault {
-            class_name: "assertive"
+            class_name: "assertive outline"
         }
         ButtonDefault {
-            class_name: "royal"
+            class_name: "royal outline"
         }
         ButtonDefault {
-            class_name: "dark"
+            class_name: "dark outline"
         }
     }
 
