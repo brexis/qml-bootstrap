@@ -7,27 +7,19 @@ ButtonStyle {
     property variant style
     property variant size
     background: Rectangle {
-        color: control.pressed ? style.active_bg :style.bg
-        border.color: control.pressed ? style.active_border : style.border
+        color: control.pressed ? style.bg : "transparent"
+        border.color: control.pressed ? style.active_border : style.bg
         border.width: StyleHelper.border_width
         radius: StyleHelper.border_radius
         Behavior on color {
-            ColorAnimation { duration: 200 }
-        }
-        Rectangle {
-            visible: control.pressed
-            anchors.fill: parent
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#26000000" }
-                GradientStop { position: 0.1; color: "transparent" }
-            }
-        }
+            ColorAnimation { duration: 20 }
+        }       
     }
     label: Text {
         horizontalAlignment: Text.AlignHCenter
         verticalAlignment: Text.AlignVCenter
         text: control.text
         font.pixelSize: root.size.font_size
-        color: root.style.text
+        color: control.pressed ? root.style.text:root.style.bg
     }
 }
