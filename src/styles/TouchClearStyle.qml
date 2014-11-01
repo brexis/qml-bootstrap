@@ -7,8 +7,8 @@ ButtonStyle {
     property variant style
     property variant size
     background: Rectangle {
-        color: control.pressed ? style.bg : "transparent"
-        border.color: control.pressed ? style.active_border : style.bg
+        color: "transparent"
+        border.color: "transparent"
         border.width: StyleHelper.border_width
         radius: StyleHelper.border_radius
         Behavior on color {
@@ -20,6 +20,7 @@ ButtonStyle {
         verticalAlignment: Text.AlignVCenter
         text: control.text
         font.pixelSize: root.size.font_size
-        color: control.pressed ? root.style.text:root.style.bg
+        color:  root.style.bg
+        opacity: control.pressed ? 0.3:1
     }
 }
