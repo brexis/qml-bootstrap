@@ -15,7 +15,13 @@ OTHER_FILES += \
 		src/buttons/ButtonDefault.qml \
     src/lists/List.qml \
     src/variables/items.js \
-    src/styles/TouchOutlineStyle.qml
+    src/styles/TouchOutlineStyle.qml \
+    src/styles/ListDividerStyle.qml \
+    src/lists/DefaultListView.qml \
+    src/lists/IconListView.qml \
+    src/styles/DefaulListViewStyle.qml \
+    src/styles/IconListViewStyle.qml \
+    src/variables/badges.js
 
 
 # Additional import path used to resolve QML modules in Qt Creator's code model

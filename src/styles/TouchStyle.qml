@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.3
 import QtQuick.Controls.Styles 1.2
 import "../variables/buttons.js" as StyleHelper
 
@@ -9,11 +9,8 @@ ButtonStyle {
     background: Rectangle {
         color: control.pressed ? style.active_bg :style.bg
         border.color: control.pressed ? style.active_border : style.border
-        border.width: StyleHelper.border_width
-        radius: StyleHelper.border_radius
-        Behavior on color {
-            ColorAnimation { duration: 200 }
-        }
+        border.width: StyleHelper.button_border_width
+        radius: StyleHelper.button_border_radius
         Rectangle {
             visible: control.pressed
             anchors.fill: parent

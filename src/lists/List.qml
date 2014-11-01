@@ -1,28 +1,14 @@
-import QtQuick 2.0
-import "../variables/fontawesome.js" as FontAwesome
+import QtQuick 2.3
+import "../styles"
 ListView {
-    model: ListModel{
-        ListElement{
-            text: "element 1"
-        }
-    }
-    delegate: listViewDelegate
-    section.property: "size"
+    section.property: "divider"
     section.criteria: ViewSection.FullString
-    section.delegate: sectionHeading
+    section.delegate: dividerHeading
 
     Component{
-        id: listViewDelegate
-        Rectangle{
-
-        }
-    }
-
-    Component{
-        id: listViewDelegate
-        Rectangle{
+        id: dividerHeading
+        ListDividerStyle{
 
         }
     }
 }
-

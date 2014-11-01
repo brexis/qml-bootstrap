@@ -1,4 +1,4 @@
-import QtQuick 2.0
+import QtQuick 2.3
 import QtQuick.Controls.Styles 1.2
 import "../variables/buttons.js" as StyleHelper
 

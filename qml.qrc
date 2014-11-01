@@ -8,5 +8,15 @@
         <file>src/variables/buttons.js</file>
         <file>src/variables/colors.js</file>
         <file>src/variables/fontawesome.js</file>
+        <file>src/styles/TouchOutlineStyle.qml</file>
+        <file>src/lists/List.qml</file>
+        <file>src/variables/items.js</file>
+        <file>src/lists/DefaultListView.qml</file>
+        <file>src/styles/ListDividerStyle.qml</file>
+        <file>src/fonts/fontawesome-webfont.ttf</file>
+        <file>src/styles/IconListViewStyle.qml</file>
+        <file>src/styles/DefaulListViewStyle.qml</file>
+        <file>src/lists/IconListView.qml</file>
+        <file>src/variables/badges.js</file>
     </qresource>
 </RCC>
