@@ -105,11 +105,11 @@ var buttonStyles = {
         active_border           : Qt.darker(color.energized, 1.18)
     },
     royal: {
-        bg                      : color.energized,
+        bg                      : color.royal,
         text                    : "#fff",
-        border                  : Qt.darker(color.energized, 1.18),
-        active_bg               : Qt.darker(color.energized, 1.18),
-        active_border           : Qt.darker(color.energized, 1.18)
+        border                  : Qt.darker(color.royal, 1.18),
+        active_bg               : Qt.darker(color.royal, 1.18),
+        active_border           : Qt.darker(color.royal, 1.18)
     },
     dark: {
         bg                      : color.dark,
