@@ -9,8 +9,8 @@ ButtonStyle {
     background: Rectangle {
         color: control.pressed ? style.bg : "transparent"
         border.color: control.pressed ? style.active_border : style.bg
-        border.width: StyleHelper.border_width
-        radius: StyleHelper.border_radius
+        border.width: StyleHelper.button_border_width
+        radius: StyleHelper.button_border_radius
         Behavior on color {
             ColorAnimation { duration: 20 }
         }       
