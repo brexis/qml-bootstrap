@@ -10,6 +10,7 @@ Item{
     property var item: model.modelData ? model.modelData : model
     property var itemStyle: StyleHelper.parseItemClass(item.class_name)
     property var badgeStyle: StyleHelper.parseBadgeClass(item.badge_class_name)
+    signal itemClicked (var item, var index);
 
     Rectangle{
         anchors.fill: parent
@@ -23,10 +24,10 @@ Item{
             anchors.rightMargin: StyleHelper.item_padding
             spacing: StyleHelper.item_padding
             Text{
-                visible: (itemRoot.item.leftIcon && itemRoot.item.leftIcon !== "")
+                visible: (itemRoot.item.leftIcon !== undefined && itemRoot.item.leftIcon !== "")
                 font.family: "FontAwesome"
                 font.pixelSize: 32
-                text: itemRoot.item.leftIcon
+                text: (itemRoot.item.leftIcon !== undefined ) ? itemRoot.item.leftIcon : ""
                 color: itemRoot.itemStyle.text
                 Layout.preferredWidth: 32
                 Layout.preferredHeight: 32
@@ -42,20 +43,20 @@ Item{
                 elide: Text.ElideRight
             }
             Text{
-                visible: (itemRoot.item.note && itemRoot.item.note !== "")
-                text: itemRoot.item.note
+                visible: (itemRoot.item.note !== undefined && itemRoot.item.note !== "")
+                text: (itemRoot.item.note !== undefined ) ? itemRoot.item.note : ""
                 color: "#aaa"
                 Layout.alignment: Qt.AlignVCenter
             }
             Rectangle{
-                visible: (itemRoot.item.badge && itemRoot.item.badge !== "")
+                visible: (itemRoot.item.badge !== undefined && itemRoot.item.badge !== "")
                 Layout.preferredHeight: 25
                 Layout.preferredWidth: 25
                 radius: StyleHelper.badge_border_radius
                 color: itemRoot.badgeStyle.bg
                 Layout.alignment: Qt.AlignVCenter
                 Text{
-                    text: itemRoot.item.badge
+                    text: (itemRoot.item.badge !== undefined ) ? itemRoot.item.badge : ""
                     color: itemRoot.badgeStyle.text
                     font.bold: true
                     font.pixelSize: StyleHelper.badge_font_size
@@ -63,10 +64,10 @@ Item{
                 }
             }
             Text{
-                visible: (itemRoot.item.rightIcon && itemRoot.item.rightIcon !== "")
+                visible: (itemRoot.item.rightIcon !== undefined && itemRoot.item.rightIcon !== "")
                 font.family: "FontAwesome"
                 font.pixelSize: 32
-                text: itemRoot.item.rightIcon
+                text: (itemRoot.item.rightIcon !== undefined ) ? itemRoot.item.rightIcon : ""
                 color: itemRoot.itemStyle.text
                 Layout.preferredWidth: 32
                 Layout.preferredHeight: 32
@@ -77,5 +78,6 @@ Item{
     MouseArea{
         id: itemMouse
         anchors.fill: parent
+        onClicked: itemRoot.itemClicked(itemRoot.item, model.index)
     }
 }

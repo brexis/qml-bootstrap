@@ -5,6 +5,7 @@ Item{
     width: ListView.view.width
     height: content.implicitHeight + StyleHelper.item_padding * 2
     property var style: StyleHelper.parseItemClass(model.class_name)
+    signal itemClicked (var item, var index);
 
     Rectangle{
         anchors.fill: parent
@@ -27,5 +28,6 @@ Item{
     MouseArea{
         id: itemMouse
         anchors.fill: parent
+        onClicked: itemRoot.itemClicked(model, model.index)
     }
 }
