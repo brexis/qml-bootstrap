@@ -66,6 +66,10 @@ Window {
     }
 }
 ```
+##Sreenshots
+![Buttons](https://raw.github.com/brexis/qml-bootstrap/dev/image1.png)
+![Default listView](https://raw.github.com/brexis/qml-bootstrap/dev/image2.png)
+![IconListView](https://raw.github.com/brexis/qml-bootstrap/dev/image3.png)
 
 ##Qt version
 Qml-bootstrap require Qt 5.3.2 or highter to work.

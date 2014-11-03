@@ -7,6 +7,7 @@ SOURCES += main.cpp
 RESOURCES += qml.qrc
 OTHER_FILES += \
 		main.qml \
+		README.md \
 		src/variables/base.js \
 		src/variables/buttons.js \
 		src/variables/colors.js \
