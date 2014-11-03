@@ -8,7 +8,7 @@ ApplicationWindow {
     visible: true
     width: 800
     height: 1280
-
+    FontLoader{ source: "qrc:/src/fonts/fontawesome-webfont.ttf"}
     Rectangle {
         anchors.fill: parent
     }
