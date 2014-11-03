@@ -4,10 +4,22 @@
         <file>src/buttons/ButtonDefault.qml</file>
         <file>src/js/helper.js</file>
         <file>src/styles/TouchStyle.qml</file>
+        <file>src/variables/badges.js</file>
         <file>src/variables/base.js</file>
         <file>src/variables/buttons.js</file>
         <file>src/variables/colors.js</file>
         <file>src/variables/fontawesome.js</file>
         <file>src/styles/TouchOutlineStyle.qml</file>
+        <file>src/lists/List.qml</file>
+        <file>src/variables/items.js</file>
+        <file>src/lists/DefaultListView.qml</file>
+        <file>src/styles/ListDividerStyle.qml</file>
+        <file>src/fonts/fontawesome-webfont.ttf</file>
+        <file>src/styles/IconListViewStyle.qml</file>
+        <file>src/styles/DefaulListViewStyle.qml</file>
+        <file>src/lists/IconListView.qml</file>
+        <file>src/examples/ButtonPage.qml</file>
+        <file>src/examples/DefaultListPage.qml</file>
+        <file>src/examples/IconListPage.qml</file>
     </qresource>
 </RCC>
