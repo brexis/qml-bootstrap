@@ -1,4 +1,3 @@
-Qt.include("base.js");
 
 var color = {
     light: "#fff",

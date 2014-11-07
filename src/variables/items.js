@@ -18,6 +18,31 @@ function parseItemClass (className) {
     return type;
 }
 
+function parseItemTextClass (className) {
+    var style = {
+        font_size: 14,
+        font_weigth: 50
+    }
+
+    var classes = className.split(' ');
+    var sizeFactor = {
+        h2: 16,
+        h3: 14,
+        h4: 12,
+        h5: 10,
+        h6: 10
+    }
+
+    for (var i = 0; i < classes.length; ++i) {
+        var trimClass = classes[i].trim();
+        var size = sizeFactor[trimClass];
+        if (size) {
+            style.font_size = size;
+            style.font_weight = headings_font_weight;
+        }
+    }
+    return style;
+}
 var item_font_size                  = 16;
 var item_border_width               = 1;
 var item_padding                    = 16;
