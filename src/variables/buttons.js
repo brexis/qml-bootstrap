@@ -1,4 +1,4 @@
-Qt.include("colors.js");
+Qt.include("base.js");
 
 function parseButtonClass (className) {
     var type = {

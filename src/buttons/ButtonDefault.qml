@@ -9,8 +9,10 @@ Button {
     text: "Button"
     property string class_name: "";
     property var type: StyleHelper.parseButtonClass(class_name);
+    property string icon: ""
+    property bool iconRight: false
 
-    width: implicitWidth + type.size.padding
+    width: implicitWidth + type.size.padding * 2
     height: type.size.height + 5
 
     style: normal
@@ -29,7 +31,7 @@ Button {
             style: type.style
             size: type.size
         }
-    }    
+    }
 
     Component.onCompleted: {
         if (class_name.indexOf('outline') != -1) {

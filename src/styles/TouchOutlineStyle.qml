@@ -1,5 +1,6 @@
 import QtQuick 2.3
 import QtQuick.Controls.Styles 1.2
+import QtQuick.Layouts 1.1
 import "../variables/buttons.js" as StyleHelper
 
 ButtonStyle {
@@ -15,11 +16,30 @@ ButtonStyle {
             ColorAnimation { duration: 20 }
         }       
     }
-    label: Text {
-        horizontalAlignment: Text.AlignHCenter
-        verticalAlignment: Text.AlignVCenter
-        text: control.text
-        font.pixelSize: root.size.font_size
-        color: control.pressed ? root.style.text:root.style.bg
+    label: RowLayout{
+        spacing: 10
+        anchors.fill: parent
+        anchors.leftMargin: root.size.padding
+        anchors.rightMargin: root.size.padding
+        layoutDirection: control.iconRight ? Qt.RightToLeft : Qt.LeftToRight
+        Text {
+            visible: control.icon !== ""
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            text: control.icon
+            font.family: "FontAwesome"
+            font.pixelSize: root.size.icon_size
+            color: control.pressed ? root.style.text : root.style.bg
+            Layout.alignment: Qt.AlignVCenter
+        }
+        Text {
+            horizontalAlignment: Text.AlignHCenter
+            verticalAlignment: Text.AlignVCenter
+            text: control.text
+            font.pixelSize: root.size.font_size
+            color: control.pressed ? root.style.text : root.style.bg
+            Layout.fillWidth: true
+            Layout.alignment: Qt.AlignVCenter
+        }
     }
 }
