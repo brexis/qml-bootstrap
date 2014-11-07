@@ -21,5 +21,24 @@
         <file>src/examples/ButtonPage.qml</file>
         <file>src/examples/DefaultListPage.qml</file>
         <file>src/examples/IconListPage.qml</file>
+        <file>src/examples/images/spengler.jpg</file>
+        <file>src/examples/images/stantz.jpg</file>
+        <file>src/examples/images/venkman.jpg</file>
+        <file>src/styles/AvatarListViewStyle.qml</file>
+        <file>src/lists/AvatarListView.qml</file>
+        <file>src/examples/AvatarListPage.qml</file>
+        <file>src/content/TextContent.qml</file>
+        <file>src/examples/images/barrett.jpg</file>
+        <file>src/examples/images/slimer.jpg</file>
+        <file>src/examples/images/tully.jpg</file>
+        <file>src/examples/images/winston.jpg</file>
+        <file>src/examples/images/blue-album.jpg</file>
+        <file>src/examples/images/dookie.jpg</file>
+        <file>src/examples/images/license-to-ill.jpg</file>
+        <file>src/examples/images/nevermind.jpg</file>
+        <file>src/examples/images/siamese-dream.jpg</file>
+        <file>src/styles/ThumbnailListViewStyle.qml</file>
+        <file>src/examples/ThumbnailListPage.qml</file>
+        <file>src/lists/ThumbnailListView.qml</file>
     </qresource>
 </RCC>

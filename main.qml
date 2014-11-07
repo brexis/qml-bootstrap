@@ -71,6 +71,15 @@ ApplicationWindow {
             text: "ListView with icon Demo"
             page: "src/examples/IconListPage.qml"
         }
+        ListElement {
+            text: "Avatar ListView Demo"
+            page: "src/examples/AvatarListPage.qml"
+        }
+
+        ListElement {
+            text: "Thumnail ListView Demo"
+            page: "src/examples/ThumbnailListPage.qml"
+        }
     }
 
     StackView {

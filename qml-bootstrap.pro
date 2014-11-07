@@ -26,6 +26,13 @@ OTHER_FILES += \
 		src/examples/ButtonPage.qml \
 		src/examples/DefaultListPage.qml \
 		src/examples/IconListPage.qml \
+    src/lists/AvatarListView.qml \
+    src/styles/AvatarListViewStyle.qml \
+    src/examples/AvatarListPage.qml \
+    src/content/TextContent.qml \
+    src/styles/ThumbnailListViewStyle.qml \
+    src/lists/ThumbnailListView.qml \
+    src/examples/ThumbnailListPage.qml
 
 
 
