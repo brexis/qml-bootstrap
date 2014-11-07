@@ -6,7 +6,7 @@ import "../variables/fontawesome.js" as FontAwesome
 Item{
     id: itemRoot
     width: ListView.view.width
-    height: 20 + StyleHelper.item_padding * 2
+    height: row.implicitHeight + StyleHelper.item_padding * 2
     property var item: model.modelData ? model.modelData : model
     property var itemStyle: StyleHelper.parseItemClass(item.class_name)
     property var badgeStyle: StyleHelper.parseBadgeClass(item.badge_class_name)
@@ -19,14 +19,17 @@ Item{
         border.width: StyleHelper.item_border_width
         border.color: itemMouse.pressed ? itemRoot.itemStyle.active_border : itemRoot.itemStyle.border
         RowLayout{
+            id: row
             anchors.fill: parent
-            anchors.leftMargin: StyleHelper.item_padding
-            anchors.rightMargin: StyleHelper.item_padding
+            anchors.leftMargin: Math.ceil( (StyleHelper.item_padding / 3) * 2);
+            anchors.rightMargin: Math.ceil( (StyleHelper.item_padding / 3) * 2);
+            anchors.topMargin: StyleHelper.item_padding
+            anchors.bottomMargin: StyleHelper.item_padding
             spacing: StyleHelper.item_padding
             Text{
                 visible: (itemRoot.item.leftIcon !== undefined && itemRoot.item.leftIcon !== "")
                 font.family: "FontAwesome"
-                font.pixelSize: 32
+                font.pixelSize: StyleHelper.item_icon_font_size
                 text: (itemRoot.item.leftIcon !== undefined ) ? itemRoot.item.leftIcon : ""
                 color: itemRoot.itemStyle.text
                 Layout.preferredWidth: 32
@@ -66,7 +69,7 @@ Item{
             Text{
                 visible: (itemRoot.item.rightIcon !== undefined && itemRoot.item.rightIcon !== "")
                 font.family: "FontAwesome"
-                font.pixelSize: 32
+                font.pixelSize: StyleHelper.item_icon_font_size
                 text: (itemRoot.item.rightIcon !== undefined ) ? itemRoot.item.rightIcon : ""
                 color: itemRoot.itemStyle.text
                 Layout.preferredWidth: 32
