@@ -6,20 +6,40 @@ import "../styles"
 import "../variables/buttons.js" as StyleHelper
 Button {
     id: root
-    text: "Button"
     property string class_name: "";
     property var type: StyleHelper.parseButtonClass(class_name);
     property string icon: ""
     property bool iconRight: false
 
-    width: implicitWidth + type.size.padding * 2
+    width: {
+        if (StyleHelper.hasClass('block', class_name) || StyleHelper.hasClass('full', class_name))
+            return parent.width;
+        else
+            return implicitWidth + type.size.padding * 2
+    }
     height: type.size.height + 5
 
-    style: normal
+    style: {
+        if (StyleHelper.hasClass('outline', class_name)) {
+            return outline;
+        }
+        if (StyleHelper.hasClass('clear', class_name)) {
+            return clear;
+        }
+        return normal;
+    }
 
     Component {
         id: normal
         TouchStyle {
+            style: type.style
+            size: type.size
+        }
+    }
+
+    Component {
+        id: clear
+        TouchClearStyle {
             style: type.style
             size: type.size
         }
@@ -32,13 +52,4 @@ Button {
             size: type.size
         }
     }
-
-    Component.onCompleted: {
-        if (class_name.indexOf('outline') != -1) {
-            root.style = outline;
-        } else if (class_name.indexOf('clear') != -1) {
-            root.style = clear;
-        }
-    }
-
 }
