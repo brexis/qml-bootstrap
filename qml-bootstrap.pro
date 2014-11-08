@@ -32,7 +32,8 @@ OTHER_FILES += \
     src/content/TextContent.qml \
     src/styles/ThumbnailListViewStyle.qml \
     src/lists/ThumbnailListView.qml \
-    src/examples/ThumbnailListPage.qml
+    src/examples/ThumbnailListPage.qml \
+    src/styles/TouchClearStyle.qml
 
 
 

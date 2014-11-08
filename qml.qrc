@@ -40,5 +40,6 @@
         <file>src/styles/ThumbnailListViewStyle.qml</file>
         <file>src/examples/ThumbnailListPage.qml</file>
         <file>src/lists/ThumbnailListView.qml</file>
+        <file>src/styles/TouchClearStyle.qml</file>
     </qresource>
 </RCC>
