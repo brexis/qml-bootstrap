@@ -7,17 +7,21 @@ ButtonStyle {
     id: root
     property variant style
     property variant size
-    background: Rectangle {
-        color: control.pressed ? style.active_bg :style.bg
-        border.color: control.pressed ? style.active_border : style.border
-        border.width: StyleHelper.button_border_width
-        radius: StyleHelper.button_border_radius
-        Rectangle {
-            visible: control.pressed
-            anchors.fill: parent
-            gradient: Gradient {
-                GradientStop { position: 0.0; color: "#26000000" }
-                GradientStop { position: 0.1; color: "transparent" }
+    background: Item {
+        Rectangle{
+            width: StyleHelper.hasClass('full', control.class_name) ? parent.width + 2 *StyleHelper.button_border_width : parent.width
+            height: parent.height
+            color: control.pressed ? style.active_bg :style.bg
+            border.color: control.pressed ? style.active_border : style.border
+            border.width: StyleHelper.button_border_width
+            radius: StyleHelper.hasClass('full', control.class_name) ? 0 : StyleHelper.button_border_radius
+            Rectangle {
+                visible: control.pressed
+                anchors.fill: parent
+                gradient: Gradient {
+                    GradientStop { position: 0.0; color: "#26000000" }
+                    GradientStop { position: 0.1; color: "transparent" }
+                }
             }
         }
     }
@@ -38,6 +42,7 @@ ButtonStyle {
             Layout.alignment: Qt.AlignVCenter
         }
         Text {
+            visible: control.text !== ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.text

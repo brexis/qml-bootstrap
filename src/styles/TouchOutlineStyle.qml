@@ -7,14 +7,16 @@ ButtonStyle {
     id: root
     property variant style
     property variant size
-    background: Rectangle {
-        color: control.pressed ? style.bg : "transparent"
-        border.color: control.pressed ? style.active_border : style.bg
-        border.width: StyleHelper.button_border_width
-        radius: StyleHelper.button_border_radius
-        Behavior on color {
-            ColorAnimation { duration: 20 }
-        }       
+    background: Item {
+        Rectangle{
+            width: StyleHelper.hasClass('full', control.class_name) ? parent.width + 2 *StyleHelper.button_border_width : parent.width
+            height: parent.height
+            anchors.centerIn: parent
+            color: control.pressed ? root.style.border : "transparent"
+            border.color: style.active_border
+            border.width: StyleHelper.button_border_width
+            radius: StyleHelper.hasClass('full', control.class_name) ? 0 : StyleHelper.button_border_radius
+        }
     }
     label: RowLayout{
         spacing: 10
@@ -29,15 +31,16 @@ ButtonStyle {
             text: control.icon
             font.family: "FontAwesome"
             font.pixelSize: root.size.icon_size
-            color: control.pressed ? root.style.text : root.style.bg
+            color: control.pressed ? "#fff" : root.style.border
             Layout.alignment: Qt.AlignVCenter
         }
         Text {
+            visible: control.text !== ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.text
             font.pixelSize: root.size.font_size
-            color: control.pressed ? root.style.text : root.style.bg
+            color: control.pressed ? "#fff" : root.style.border
             Layout.fillWidth: true
             Layout.alignment: Qt.AlignVCenter
         }
