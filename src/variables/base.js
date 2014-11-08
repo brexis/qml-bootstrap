@@ -66,3 +66,7 @@ function parseTextClass (className) {
     }
     return style;
 }
+
+function hasClass(name, className) {
+    return className.indexOf(name) !== -1;
+}
