@@ -8,6 +8,7 @@ ButtonStyle {
     property variant style
     property variant size
     background: Item {
+        clip: true
         Rectangle{
             width: StyleHelper.hasClass('full', control.class_name) ? parent.width + 2 *StyleHelper.button_border_width : parent.width
             height: parent.height
@@ -16,6 +17,7 @@ ButtonStyle {
             border.color: style.active_border
             border.width: StyleHelper.button_border_width
             radius: StyleHelper.hasClass('full', control.class_name) ? 0 : StyleHelper.button_border_radius
+            smooth: true
         }
     }
     label: RowLayout{
