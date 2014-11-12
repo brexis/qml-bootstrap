@@ -7,5 +7,5 @@ Text{
     font.pixelSize: style.font_size
     font.weight: style.font_weight
     color: StyleHelper.base_color
-
+    lineHeight: style.line_height
 }
