@@ -45,6 +45,7 @@ Item{
                         style: StyleHelper.parseItemTextClass(class_name)
                         elide: Text.ElideRight
                         Layout.alignment: Qt.AlignTop
+                        Layout.fillWidth: true
                     }
                     TextContent{
                         text: itemRoot.item.detail
@@ -53,6 +54,7 @@ Item{
                         verticalAlignment: Text.AlignTop
                         Layout.alignment: Qt.AlignTop
                         Layout.fillHeight: true
+                        Layout.fillWidth: true
                     }
                 }
             }

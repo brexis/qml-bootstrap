@@ -61,12 +61,14 @@ Item{
                         style: StyleHelper.parseItemTextClass(class_name)
                         elide: Text.ElideRight
                         Layout.alignment: Qt.AlignTop
+                        Layout.fillWidth: true
                     }
                     TextContent{
                         text: itemRoot.item.detail
                         color: "#666"
                         elide: Text.ElideRight
                         Layout.alignment: Qt.AlignTop
+                        Layout.fillWidth: true
                     }
                 }
             }
