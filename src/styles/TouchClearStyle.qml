@@ -1,7 +1,7 @@
 import QtQuick 2.3
 import QtQuick.Controls.Styles 1.2
 import QtQuick.Layouts 1.1
-import "../variables/buttons.js" as StyleHelper
+import "../variables/bars.js" as StyleHelper
 
 ButtonStyle {
     id: root
@@ -22,18 +22,16 @@ ButtonStyle {
     }
     label: RowLayout{
         spacing: 10
-        anchors.fill: parent
-        anchors.leftMargin: root.size.padding
-        anchors.rightMargin: root.size.padding
         layoutDirection: control.iconRight ? Qt.RightToLeft : Qt.LeftToRight
         opacity: control.pressed ? 0.3 : 1
+
         Text {
             visible: control.icon !== ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.icon
             font.family: "FontAwesome"
-            font.pixelSize: root.size.icon_size
+            font.pixelSize: control.iconSize
             color: root.style.border
             Layout.alignment: Qt.AlignVCenter
         }
@@ -42,10 +40,9 @@ ButtonStyle {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.text
-            font.pixelSize: root.size.font_size
+            font.pixelSize: control.fontSize
             color: root.style.border
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignVCenter
+            Layout.alignment: Qt.AlignCenter
         }
     }
 }

@@ -22,17 +22,15 @@ ButtonStyle {
     }
     label: RowLayout{
         spacing: 10
-        anchors.fill: parent
-        anchors.leftMargin: root.size.padding
-        anchors.rightMargin: root.size.padding
         layoutDirection: control.iconRight ? Qt.RightToLeft : Qt.LeftToRight
+
         Text {
             visible: control.icon !== ""
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.icon
             font.family: "FontAwesome"
-            font.pixelSize: root.size.icon_size
+            font.pixelSize: control.iconSize
             color: control.pressed ? "#fff" : root.style.border
             Layout.alignment: Qt.AlignVCenter
         }
@@ -41,10 +39,9 @@ ButtonStyle {
             horizontalAlignment: Text.AlignHCenter
             verticalAlignment: Text.AlignVCenter
             text: control.text
-            font.pixelSize: root.size.font_size
+            font.pixelSize: control.fontSize
             color: control.pressed ? "#fff" : root.style.border
-            Layout.fillWidth: true
-            Layout.alignment: Qt.AlignVCenter
+            Layout.alignment: Qt.AlignCenter
         }
     }
 }
