@@ -48,20 +48,22 @@ Item{
             Text{
                 visible: (itemRoot.item.note !== undefined && itemRoot.item.note !== "")
                 text: (itemRoot.item.note !== undefined ) ? itemRoot.item.note : ""
+                font.pixelSize: 14
                 color: "#aaa"
                 Layout.alignment: Qt.AlignVCenter
             }
             Rectangle{
                 visible: (itemRoot.item.badge !== undefined && itemRoot.item.badge !== "")
-                Layout.preferredHeight: 25
-                Layout.preferredWidth: 25
+                Layout.preferredHeight: badge.height + 2 * 3
+                Layout.preferredWidth: badge.width + 2 * 8
                 radius: StyleHelper.badge_border_radius
                 color: itemRoot.badgeStyle.bg
                 Layout.alignment: Qt.AlignVCenter
                 Text{
+                    id: badge
                     text: (itemRoot.item.badge !== undefined ) ? itemRoot.item.badge : ""
                     color: itemRoot.badgeStyle.text
-                    font.bold: true
+                    font.weight: StyleHelper.badge_font_weight
                     font.pixelSize: StyleHelper.badge_font_size
                     anchors.centerIn: parent
                 }
