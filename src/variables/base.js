@@ -43,30 +43,64 @@ var border_radius_small            = 3;
 function parseTextClass (className) {
     var style = {
         font_size: font_size_base,
-        font_weight: 50
+        font_weight: 50,
+        line_height: 1.25
     };
 
     var classes = className.split(' ');
-    var sizeFactor = {
-        h1: Math.floor(font_size_base * 2.60),
-        h2: Math.floor(font_size_base * 2.15),
-        h3: Math.floor(font_size_base * 1.70),
-        h4: Math.floor(font_size_base * 1.25),
-        h5: Math.floor(font_size_base),
-        h6: Math.floor(font_size_base * 0.85)
-    }
-
     for (var i = 0; i < classes.length; ++i) {
         var trimClass = classes[i].trim();
-        var size = sizeFactor[trimClass];
+        var size = textStyles[trimClass];
         if (size) {
-            style.font_size = size;
-            style.font_weight = headings_font_weight;
+            style = size
         }
     }
     return style;
 }
 
+var textStyles = {
+    h1: {
+        font_size:  Math.floor(font_size_base * 2.60),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h2: {
+        font_size:  Math.floor(font_size_base * 2.15),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h3: {
+        font_size:  Math.floor(font_size_base * 1.70),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h4: {
+        font_size:  Math.floor(font_size_base * 1.25),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h5: {
+        font_size:  Math.floor(font_size_base),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h6: {
+        font_size:  Math.floor(font_size_base * 0.85),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    }
+};
+
 function hasClass(name, className) {
     return className.indexOf(name) !== -1;
+}
+
+function hasOnClass(names, class_name) {
+    var _names = names.splite(' ');
+    for(var i = 0; i <_names.length; ++i) {
+        if (className.indexOf(_names[i]) !== -1) {
+            return true;
+        }
+    }
+    return false;
 }

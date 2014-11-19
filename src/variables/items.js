@@ -1,4 +1,4 @@
-Qt.include("buttons.js");
+Qt.include("bars.js");
 
 function parseItemClass (className) {
     var type = itemStyles.default
@@ -20,29 +20,55 @@ function parseItemClass (className) {
 
 function parseItemTextClass (className) {
     var style = {
-        font_size: 14,
-        font_weigth: 50
-    }
+        font_size: font_size_base,
+        font_weight: 50,
+        line_height: 1.25
+    };
 
     var classes = className.split(' ');
-    var sizeFactor = {
-        h2: 16,
-        h3: 14,
-        h4: 12,
-        h5: 10,
-        h6: 10
-    }
-
     for (var i = 0; i < classes.length; ++i) {
         var trimClass = classes[i].trim();
-        var size = sizeFactor[trimClass];
+        var size = itemTextStyles[trimClass];
         if (size) {
-            style.font_size = size;
-            style.font_weight = headings_font_weight;
+            style = size
         }
     }
     return style;
 }
+
+var itemTextStyles = {
+    h1: {
+        font_size:  Math.floor(font_size_base * 2.60),
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h2: {
+        font_size:  16,
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h3: {
+        font_size:  14,
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h4: {
+        font_size:  12,
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h5: {
+        font_size:  10,
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    },
+    h6: {
+        font_size:  10,
+        font_weight: headings_font_weight,
+        line_height: headings_line_height
+    }
+};
+
 var item_font_size                  = 16;
 var item_border_width               = 1;
 var item_padding                    = 16;

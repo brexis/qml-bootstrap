@@ -20,6 +20,7 @@ function parseBadgeClass (className) {
 
 var badge_font_size                  = 14;
 var badge_border_radius              = 10;
+var badge_font_weight                = 75
 
 var badgeStyles = {
     light: {
