@@ -10,6 +10,9 @@ Button {
     property var type: StyleHelper.parseButtonClass(class_name);
     property string icon: ""
     property bool iconRight: false
+    property double fontSize : type.size.font_size
+    property double iconSize : type.size.icon_size
+    property bool radius: true
 
     width: {
         if (StyleHelper.hasClass('block', class_name) || StyleHelper.hasClass('full', class_name))
