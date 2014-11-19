@@ -33,7 +33,11 @@ OTHER_FILES += \
     src/styles/ThumbnailListViewStyle.qml \
     src/lists/ThumbnailListView.qml \
     src/examples/ThumbnailListPage.qml \
-    src/styles/TouchClearStyle.qml
+    src/styles/TouchClearStyle.qml \
+    src/bars/Bar.qml \
+    src/variables/bars.js \
+    src/bars/ButtonBar.qml \
+    src/examples/ButtonBarPage.qml
 
 
 

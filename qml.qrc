@@ -41,5 +41,9 @@
         <file>src/examples/ThumbnailListPage.qml</file>
         <file>src/lists/ThumbnailListView.qml</file>
         <file>src/styles/TouchClearStyle.qml</file>
+        <file>src/bars/Bar.qml</file>
+        <file>src/variables/bars.js</file>
+        <file>src/bars/ButtonBar.qml</file>
+        <file>src/examples/ButtonBarPage.qml</file>
     </qresource>
 </RCC>
