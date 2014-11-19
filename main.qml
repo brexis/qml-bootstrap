@@ -1,60 +1,33 @@
 import QtQuick 2.3
 import QtQuick.Controls 1.2
-import "src/buttons"
 import "src/lists"
+import "src/bars"
+import "src/buttons"
 import "src/variables/fontawesome.js" as FontAwesome
 
 ApplicationWindow {
     visible: true
-    width: 800
+    width: return 800
     height: 1280
     FontLoader{ source: "qrc:/src/fonts/fontawesome-webfont.ttf"}
     Rectangle {
         anchors.fill: parent
     }
-
-    toolBar: Rectangle {
-        width: parent.width
-        height: 70
-        color: "#e9e9ea"
-
-        Rectangle {
-            id: backButton
-            width: opacity ? 60 : 0
-            anchors.left: parent.left
-            anchors.leftMargin: 20
-            opacity: stackView.depth > 1 ? 1 : 0
-            anchors.verticalCenter: parent.verticalCenter
-            antialiasing: true
-            height: 60
-            radius: 4
-            color: backmouse.pressed ? "#ceced1" : "transparent"
-            Behavior on opacity { NumberAnimation{} }
-            Text{
-                font.family: "FontAwesome"
-                font.pixelSize: 32
-                text: FontAwesome.icons.fa_angle_left
-                anchors.fill: parent
-                verticalAlignment: Text.AlignVCenter
-                horizontalAlignment: Text.AlignHCenter
-            }
-
-            MouseArea {
-                id: backmouse
-                anchors.fill: parent
-                anchors.margins: -10
+    toolBar: Bar{
+        leftComponent: Component{
+            ButtonDefault{
+                class_name: "bar dark clear"
+                text: "Back"
+                icon: FontAwesome.icons.fa_angle_left
+                opacity: stackView.depth > 1 ? 1 : 0
+                visible: opacity ? true : false
+                Behavior on opacity { NumberAnimation{} }
                 onClicked: stackView.pop()
             }
         }
 
-        Text {
-            font.pixelSize: 22
-            Behavior on x { NumberAnimation{ easing.type: Easing.OutCubic} }
-            x: backButton.x + backButton.width + 20
-            anchors.verticalCenter: parent.verticalCenter
-            color: "black"
-            text: "Qml Bootstrap Demo"
-        }
+        class_name: "header"
+        title: "Qml Bootstrap Demo"
     }
 
     ListModel {
@@ -75,10 +48,13 @@ ApplicationWindow {
             text: "Avatar ListView Demo"
             page: "src/examples/AvatarListPage.qml"
         }
-
         ListElement {
             text: "Thumnail ListView Demo"
             page: "src/examples/ThumbnailListPage.qml"
+        }
+        ListElement {
+            text: "Button bar Demo"
+            page: "src/examples/ButtonBarPage.qml"
         }
     }
 
@@ -100,5 +76,10 @@ ApplicationWindow {
                 onItemClicked: stackView.push(Qt.resolvedUrl(item.page))
             }
         }
+    }
+
+    statusBar: Bar{
+        class_name: "footer calm"
+        title: "Powered by Brexis and Kamhix"
     }
 }
