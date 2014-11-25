@@ -22,8 +22,12 @@ ButtonStyle {
     }
     label: RowLayout{
         spacing: 10
+        anchors.fill: parent
+        anchors.leftMargin: root.size.padding
+        anchors.rightMargin: root.size.padding
+
         layoutDirection: control.iconRight ? Qt.RightToLeft : Qt.LeftToRight
-        opacity: control.pressed ? 0.3 : 1
+        opacity: (control.pressed || control.selected) ? 0.3 : 1
 
         Text {
             visible: control.icon !== ""

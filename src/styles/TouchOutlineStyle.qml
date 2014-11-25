@@ -13,7 +13,7 @@ ButtonStyle {
             width: StyleHelper.hasClass('full', control.class_name) ? parent.width + 2 *StyleHelper.button_border_width : parent.width
             height: parent.height
             anchors.centerIn: parent
-            color: control.pressed ? root.style.border : "transparent"
+            color: (control.pressed || control.selected) ? root.style.border : "transparent"
             border.color: style.active_border
             border.width: StyleHelper.button_border_width
             radius: StyleHelper.hasClass('full', control.class_name) ? 0 : StyleHelper.button_border_radius
@@ -22,6 +22,10 @@ ButtonStyle {
     }
     label: RowLayout{
         spacing: 10
+        anchors.fill: parent
+        anchors.leftMargin: root.size.padding
+        anchors.rightMargin: root.size.padding
+
         layoutDirection: control.iconRight ? Qt.RightToLeft : Qt.LeftToRight
 
         Text {
@@ -31,7 +35,7 @@ ButtonStyle {
             text: control.icon
             font.family: "FontAwesome"
             font.pixelSize: control.iconSize
-            color: control.pressed ? "#fff" : root.style.border
+            color: (control.pressed || control.selected) ? "#fff" : root.style.border
             Layout.alignment: Qt.AlignVCenter
         }
         Text {
@@ -40,7 +44,7 @@ ButtonStyle {
             verticalAlignment: Text.AlignVCenter
             text: control.text
             font.pixelSize: control.fontSize
-            color: control.pressed ? "#fff" : root.style.border
+            color: (control.pressed || control.selected) ? "#fff" : root.style.border
             Layout.alignment: Qt.AlignCenter
         }
     }
