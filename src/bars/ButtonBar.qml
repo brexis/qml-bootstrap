@@ -7,43 +7,62 @@ import "../variables/buttons.js" as StyleHelper
 
 Rectangle {
     id: root
-    width: 300
-    height: 40
+    width: 330
+    height: barContent.height
+
+    property bool checkable: false
+    property int checkedIndex: -1
+    property variant model: []
+
     property string class_name: ""
     property var type: StyleHelper.parseButtonClass(class_name);
-    border.color: "#000"
-    border.width: 10
-    radius: 5
+    border.color: type.style.active_border
+    border.width: StyleHelper.button_border_width
+    radius: StyleHelper.button_border_radius
 
-    Row {
-        id: row
+    Item {
+        id: barContent
+        width: parent.width - StyleHelper.button_border_width * 2
+        height: row.height
+        anchors.centerIn: parent
+        clip: true
 
-        ButtonDefault {
-            text: "Breakfast"
-            width: root.width / 3
-            class_name: "full"
-            radius: false
-        }
-        Rectangle{
-            width: StyleHelper.button_border_width
-            height: parent.height
-            color: root.type.style.border
-        }
-        ButtonDefault {
-            text: "Lunch"
-            width: root.width / 3
-            class_name: "full"
-        }
-        Rectangle{
-            width: 1
-            height: parent.height
-            color: root.type.style.active_border
-        }
-        ButtonDefault {
-            text: "Dinner"
-            width: root.width / 3
-            radius: false
-            class_name: "full"
+        Row {
+            id: row
+            Repeater{
+                model: root.model.length
+                Item{
+                    width: root.width / root.model.length
+                    height: btn.height
+
+                    ButtonDefault {
+                        id: btn
+                        text: root.model[index].text
+                        icon:  typeof(root.model[index].icon) === 'string' ? root.model[index].icon : ''
+                        width: parent.width
+                        radius: false
+                        selected: root.checkable && index === root.checkedIndex
+
+                        class_name: {
+                            var nClassName = root.class_name;
+                            if (!StyleHelper.hasClass('full', nClassName)) {
+                                nClassName += " full"
+                            }
+                            return nClassName;
+                        }
+
+                        onClicked: {
+                            root.checkedIndex = index;
+                        }
+                    }
+                    Rectangle{
+                        visible: index !== 0
+                        width: StyleHelper.button_border_width
+                        height: parent.height
+                        color: root.type.style.border
+                    }
+                }
+            }
         }
     }
 }
