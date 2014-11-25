@@ -18,6 +18,8 @@ Item {
                 spacing: 10
                 Layout.alignment: Qt.AlignTop
                 ButtonDefault {
+                    checkable: true
+                    checked: true
                     class_name: "small"
                     text: "Button small"
                 }
