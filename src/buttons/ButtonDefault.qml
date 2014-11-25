@@ -13,6 +13,12 @@ Button {
     property double fontSize : type.size.font_size
     property double iconSize : type.size.icon_size
     property bool radius: true
+    property bool selected: {
+        if (checkable) {
+            return checked;
+        }
+        return false
+    }
 
     width: {
         if (StyleHelper.hasClass('block', class_name) || StyleHelper.hasClass('full', class_name))
