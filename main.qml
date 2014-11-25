@@ -7,13 +7,14 @@ import "src/variables/fontawesome.js" as FontAwesome
 
 ApplicationWindow {
     visible: true
-    width: return 800
+    width: 800
     height: 1280
     FontLoader{ source: "qrc:/src/fonts/fontawesome-webfont.ttf"}
     Rectangle {
         anchors.fill: parent
     }
     toolBar: Bar{
+        id: titleBar
         leftComponent: Component{
             ButtonDefault{
                 class_name: "bar dark clear"
@@ -22,7 +23,10 @@ ApplicationWindow {
                 opacity: stackView.depth > 1 ? 1 : 0
                 visible: opacity ? true : false
                 Behavior on opacity { NumberAnimation{} }
-                onClicked: stackView.pop()
+                onClicked: {
+                    stackView.pop()
+                    titleBar.title = "Qml Bootstrap Demo"
+                }
             }
         }
 
@@ -73,7 +77,10 @@ ApplicationWindow {
             DefaultListView{
                 model: pageModel
                 anchors.fill: parent
-                onItemClicked: stackView.push(Qt.resolvedUrl(item.page))
+                onItemClicked: {
+                    stackView.push(Qt.resolvedUrl(item.page))
+                    titleBar.title = item.text
+                }
             }
         }
     }
