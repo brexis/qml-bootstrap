@@ -29,8 +29,8 @@ Item {
                    }
                ]
 
-               onCheckedIndexChanged: {
-                   console.log('Index ' + checkedIndex);
+               onClick: {
+                   console.log('Click Index ' + index);
                }
             }
 
@@ -48,8 +48,8 @@ Item {
                    }
                ]
 
-               onCheckedIndexChanged: {
-                   console.log('Index ' + checkedIndex);
+               onClick: {
+                   console.log('Click Index ' + index);
                }
             }
             ButtonBar{

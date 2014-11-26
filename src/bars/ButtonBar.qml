@@ -19,6 +19,7 @@ Rectangle {
     border.color: type.style.active_border
     border.width: StyleHelper.button_border_width
     radius: StyleHelper.button_border_radius
+    signal click (var index);
 
     Item {
         id: barContent
@@ -53,6 +54,7 @@ Rectangle {
 
                         onClicked: {
                             root.checkedIndex = index;
+                            root.click(index);
                         }
                     }
                     Rectangle{
