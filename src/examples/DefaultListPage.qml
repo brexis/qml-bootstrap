@@ -6,6 +6,7 @@ Item {
     height: parent.height
     DefaultListView{
         id: listView
+        hasDivider: true
         anchors.fill: parent
         onItemClicked: {
             listView.model.get(index).text = "Item clicked";

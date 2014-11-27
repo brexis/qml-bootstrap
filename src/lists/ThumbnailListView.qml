@@ -5,10 +5,7 @@ import "../content"
 import "../variables/items.js" as StyleHelper
 List {
     id: rootList
-    delegate: listViewDelegate
-
-    Component{
-        id: listViewDelegate
+    delegate: Component{
         ThumbnailListViewStyle{
             root: rootList
             onItemClicked: rootList.itemClicked(item, index)
