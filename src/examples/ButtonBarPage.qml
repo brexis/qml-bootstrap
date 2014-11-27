@@ -1,6 +1,5 @@
 import QtQuick 2.0
 import QtQuick.Layouts 1.1
-import "../buttons"
 import "../variables/fontawesome.js" as FontAwesome
 import "../bars"
 
