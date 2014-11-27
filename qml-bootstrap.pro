@@ -37,7 +37,10 @@ OTHER_FILES += \
     src/bars/Bar.qml \
     src/variables/bars.js \
     src/bars/ButtonBar.qml \
-    src/examples/ButtonBarPage.qml
+    src/examples/ButtonBarPage.qml \
+    src/cards/Card.qml \
+    src/styles/CardStyle.qml \
+    src/examples/CardPage.qml
 
 
 

@@ -60,6 +60,10 @@ ApplicationWindow {
             text: "Button bar Demo"
             page: "src/examples/ButtonBarPage.qml"
         }
+        ListElement {
+            text: "Card"
+            page: "src/examples/CardPage.qml"
+        }
     }
 
     StackView {

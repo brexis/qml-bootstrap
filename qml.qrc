@@ -45,5 +45,8 @@
         <file>src/variables/bars.js</file>
         <file>src/bars/ButtonBar.qml</file>
         <file>src/examples/ButtonBarPage.qml</file>
+        <file>src/examples/CardPage.qml</file>
+        <file>src/styles/CardStyle.qml</file>
+        <file>src/cards/Card.qml</file>
     </qresource>
 </RCC>
