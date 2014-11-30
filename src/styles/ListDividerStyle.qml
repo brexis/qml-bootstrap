@@ -5,6 +5,7 @@ Item{
     width: ListView.view.width
     height: sectionText.implicitHeight + StyleHelper.item_padding
     property string text
+    property real radius: 0
 
     Rectangle{
         anchors.fill: parent
@@ -12,6 +13,7 @@ Item{
         color: StyleHelper.item_divider_bg
         border.width: StyleHelper.item_border_width
         border.color: StyleHelper.itemStyles.default.border
+        radius: root.radius
 
         Text{
             id: sectionText
