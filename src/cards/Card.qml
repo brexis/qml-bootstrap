@@ -15,6 +15,7 @@ Rectangle {
     property alias model: listView.model
     property string header: ""
     property string footer: ""
+    property Component delegate: cardDelegate
 
     Item{
         id: shadow
@@ -45,6 +46,11 @@ Rectangle {
        source: shadow
     }
 
+    Component{
+        id: cardDelegate
+        CardStyle{}
+    }
+
     ListView {
         id: listView
         anchors.top: parent.top;
@@ -57,9 +63,7 @@ Rectangle {
 
         boundsBehavior : Flickable.StopAtBounds
 
-        delegate: Component{
-            CardStyle{}
-        }
+        delegate: root.delegate
 
         header: root.header === "" ? blank : headerComponent
 
@@ -67,6 +71,7 @@ Rectangle {
             id: headerComponent
             ListDividerStyle{
                 text: root.header
+                radius: StyleHelper.card_border_radius
             }
         }
         footer: root.footer === "" ? blank : footerComponent
@@ -75,6 +80,7 @@ Rectangle {
             id: footerComponent
             ListDividerStyle{
                 text: root.footer
+                radius: StyleHelper.card_border_radius
             }
         }
 
@@ -84,4 +90,3 @@ Rectangle {
         }
     }
 }
-
