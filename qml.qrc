@@ -48,5 +48,7 @@
         <file>src/examples/CardPage.qml</file>
         <file>src/styles/CardStyle.qml</file>
         <file>src/cards/Card.qml</file>
+        <file>src/cards/CardList.qml</file>
+        <file>src/styles/CardListStyle.qml</file>
     </qresource>
 </RCC>

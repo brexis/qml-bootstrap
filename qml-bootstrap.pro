@@ -40,7 +40,9 @@ OTHER_FILES += \
     src/examples/ButtonBarPage.qml \
     src/cards/Card.qml \
     src/styles/CardStyle.qml \
-    src/examples/CardPage.qml
+    src/examples/CardPage.qml \
+    src/cards/CardList.qml \
+    src/styles/CardListStyle.qml
 
 
 
