@@ -22,6 +22,7 @@ Item {
     }
 
     Card{
+        id: card2
         anchors.top: card1.bottom
         header: "I'm a Header in a Card!"
         footer: "I'm a Footer in a Card!"
@@ -39,4 +40,22 @@ Item {
         }
     }
 
+    CardList{
+        anchors.top: card2.bottom
+        header: "I'm a Header in a Card!"
+        footer: "I'm a Footer in a Card!"
+
+        model: [
+            {
+                text: "This is a basic Card which (positive style)",
+                class_name: "positive",
+                leftIcon: FontAwesome.icons.fa_comments_o,
+                rightIcon: FontAwesome.icons.fa_phone,
+            },
+            {
+                text: "This is a basic Card which contains an item that has wrapping text. (energized style)",
+                leftIcon: FontAwesome.icons.fa_phone,
+            }
+        ]
+    }
 }
