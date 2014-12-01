@@ -42,7 +42,8 @@ OTHER_FILES += \
     src/styles/CardStyle.qml \
     src/examples/CardPage.qml \
     src/cards/CardList.qml \
-    src/styles/CardListStyle.qml
+    src/styles/CardListStyle.qml \
+    src/cards/InsetList.qml
 
 
 

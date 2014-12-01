@@ -50,5 +50,6 @@
         <file>src/cards/Card.qml</file>
         <file>src/cards/CardList.qml</file>
         <file>src/styles/CardListStyle.qml</file>
+        <file>src/cards/InsetList.qml</file>
     </qresource>
 </RCC>

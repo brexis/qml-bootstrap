@@ -8,8 +8,22 @@ Item {
     width: parent.width
     height: parent.height
 
+    InsetList{
+        id: inset
+        model: ListModel{
+            ListElement{
+                text: "This is a basic inset List"
+            }
+
+            ListElement{
+                text: "This is a basic inset list which contains an item that has wrapping text."
+            }
+        }
+    }
+
     Card{
         id: card1
+        anchors.top: inset.bottom
         model: ListModel{
             ListElement{
                 text: "This is a basic Card which"
