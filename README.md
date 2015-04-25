@@ -1,3 +1,5 @@
+[![Feature Requests](http://feathub.com/brexis/qml-bootstrap?format=svg)](http://feathub.com/brexis/qml-bootstrap)
+
 qml-bootstrap
 =============
 Qml Bootstrap is a set of simple and beautiful components for qml mobile and desktop projects. It is inspired from [Ionic framework](http://ionicframework.com/) components and use [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons font.
