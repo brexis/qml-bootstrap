@@ -4,7 +4,7 @@ qml-bootstrap
 =============
 Qml Bootstrap is a set of simple and beautiful components for qml mobile and desktop projects. It is inspired from [Ionic framework](http://ionicframework.com/) components and use [Font Awesome](http://fortawesome.github.io/Font-Awesome/) icons font.
 
-##How to use it
+## How to use it
 Just clone the repository and create a new qml project base on this code. Then import components that you want to use. For example, to use ButtonDefault
 ```
 import QtQuick 2.3
@@ -68,17 +68,18 @@ Window {
     }
 }
 ```
-##Sreenshots
+## Sreenshots
 ![Buttons](https://raw.github.com/brexis/qml-bootstrap/dev/image1.png)
 ![Default listView](https://raw.github.com/brexis/qml-bootstrap/dev/image2.png)
 ![IconListView](https://raw.github.com/brexis/qml-bootstrap/dev/image3.png)
 
-##Qt version
-Qml-bootstrap requires Qt 5.3.2 or higher to work.
-##Plateforms supported
+
+## Qt version
+Qml-bootstrap requires Qt 5.3.2 or highter to work.
+## Plateforms supported
 You can use these components Window, Linux, Max OS Android or IOS.
 
-#Thanks
+# Thanks
 [Ionic Framework](http://ionicframework.com/) - A hybrid mobile apps framework.
 
 [Font Awesome](http://fortawesome.github.io/Font-Awesome/) - The iconic font and CSS toolkit.
